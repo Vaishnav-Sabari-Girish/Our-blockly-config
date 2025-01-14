@@ -30,6 +30,8 @@ forBlock['add_text'] = function (block, generator) {
   return code;
 };
 
+
+
 // New block generator for 'esp32_pin_write'
 forBlock['esp32_pin_write'] = function (block, generator) {
   const pin = generator.valueToCode(block, 'PIN', Order.ATOMIC);
@@ -38,3 +40,13 @@ forBlock['esp32_pin_write'] = function (block, generator) {
   const code = `digitalWrite(${pin}, ${value});\n`;
   return code;
 };
+
+// New block generator for 'esp32_pin_write'
+forBlock['esp32_pin_write'] = function (block, generator) {
+  const pin = generator.valueToCode(block, 'PIN', Order.ATOMIC);
+  const value = generator.valueToCode(block, 'VALUE', Order.ATOMIC);
+  // Generate the ESP32 digitalWrite code
+  const code = `digitalWrite(${pin}, ${value});\n`;
+  return code;
+};
+

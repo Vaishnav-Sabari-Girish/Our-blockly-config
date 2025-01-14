@@ -330,6 +330,21 @@ export const toolbox = {
         },
         {
           kind: 'block',
+          type: 'text_length',
+          /*inputs: {
+            VALUE: {
+              shadow: {
+                type: 'text',
+                fields: {
+                  TEXT: 'abc',
+                },
+              },
+            },
+          }*/
+        },
+        
+        {
+          kind: 'block',
           type: 'text_join',
         },
         {
@@ -625,7 +640,7 @@ export const toolbox = {
       categorystyle: 'procedure_category',
       custom: 'PROCEDURE',
     },
-    {
+{
       kind: 'category',
       name: 'esp32',
       categorystyle: 'esp32_category',
