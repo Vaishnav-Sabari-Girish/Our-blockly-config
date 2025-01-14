@@ -48,10 +48,28 @@ const esp32PinWrite = {
   helpUrl: '',
 };
 
+const stringLength = {
+  type: 'string_length',
+  message0: 'length of %1',
+  args0: [
+    {
+      type: 'input_value',
+      name: 'VALUE',
+      check: 'String',
+    },
+  ],
+  output: 'Number',
+  colour: 160,
+  tooltip: 'Returns number of letters in the provided text.',
+  helpUrl: 'http://www.w3schools.com/jsref/jsref_length_string.asp',
+};
+
+
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
 // This file has no side effects!
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   addText,
+  stringLength,
   esp32PinWrite,
 ]);

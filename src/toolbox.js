@@ -331,7 +331,7 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'text_length',
-          inputs: {
+          /*inputs: {
             VALUE: {
               shadow: {
                 type: 'text',
@@ -340,7 +340,7 @@ export const toolbox = {
                 },
               },
             },
-          },
+          }*/,
         },
         
         {
