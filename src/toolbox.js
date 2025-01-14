@@ -330,21 +330,6 @@ export const toolbox = {
         },
         {
           kind: 'block',
-          type: 'text_length',
-          inputs: {
-            VALUE: {
-              shadow: {
-                type: 'text',
-                fields: {
-                  TEXT: 'abc',
-                },
-              },
-            },
-          },
-        },
-        
-        {
-          kind: 'block',
           type: 'text_join',
         },
         {
@@ -361,7 +346,7 @@ export const toolbox = {
             },
           },
         },
-        /*{
+        {
           kind: 'block',
           type: 'text_length',
           inputs: {
@@ -374,7 +359,7 @@ export const toolbox = {
               },
             },
           },
-        },*/
+        },
         {
           kind: 'block',
           type: 'text_isEmpty',
@@ -639,6 +624,36 @@ export const toolbox = {
       name: 'Functions',
       categorystyle: 'procedure_category',
       custom: 'PROCEDURE',
+    },
+    {
+      kind: 'category',
+      name: 'esp32',
+      categorystyle: 'esp32_category',
+      contents: 
+      [
+        {
+          kind: 'block',
+          type: 'esp32_pin_write',
+          message: 'set ESP32 pin %1 to %2',
+          args0: [
+            {
+              type: 'input_value',
+              name: 'PIN',
+              check: 'Number'
+            },
+            {
+              type: 'input_value',
+              name: 'VALUE',
+              check: 'Boolean'
+            }
+          ],
+          previousStatement: null,
+          nextStatement: null,
+          colour: 230,
+          tooltip: 'Write HIGH or LOW to an ESP32 pin. Make sure to specify a valid pin.',
+          helpUrl: 'https://www.esp32.com'
+        },
+      ],
     },
   ],
 };

@@ -1,7 +1,7 @@
-/**
+/*
  * @license
  * Copyright 2023 Google LLC
- * SPDX-License-Identifier: Apache-2.0
+ * SPDX-License-Identifier: Apache-1.0
  */
 
 import * as Blockly from 'blockly';
@@ -24,7 +24,7 @@ const ws = Blockly.inject(blocklyDiv, {toolbox});
 
 // This function resets the code and output divs, shows the
 // generated code from the workspace, and evals the code.
-// In a real application, you probably shouldn't use `eval`.
+// In a real application, you probably shouldn't use eval.
 const runCode = () => {
   const code = javascriptGenerator.workspaceToCode(ws);
   codeDiv.innerText = code;
@@ -60,3 +60,4 @@ ws.addChangeListener((e) => {
   }
   runCode();
 });
+

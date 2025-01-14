@@ -11,6 +11,7 @@ import {Order} from 'blockly/javascript';
 // This file has no side effects!
 export const forBlock = Object.create(null);
 
+// Existing block generator for 'add_text'
 forBlock['add_text'] = function (block, generator) {
   const text = generator.valueToCode(block, 'TEXT', Order.NONE) || "''";
   const addText = generator.provideFunction_(
@@ -29,9 +30,11 @@ forBlock['add_text'] = function (block, generator) {
   return code;
 };
 
-forBlock['string_length'] = function (block, generator) {
-  const value = generator.valueToCode(block, 'VALUE', Order.NONE) || "''";
-  const code = `${value}.length`;
-  return [code, Order.MEMBER];
+// New block generator for 'esp32_pin_write'
+forBlock['esp32_pin_write'] = function (block, generator) {
+  const pin = generator.valueToCode(block, 'PIN', Order.ATOMIC);
+  const value = generator.valueToCode(block, 'VALUE', Order.ATOMIC);
+  // Generate the ESP32 digitalWrite code
+  const code = `digitalWrite(${pin}, ${value});\n`;
+  return code;
 };
-
