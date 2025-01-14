@@ -1,4 +1,4 @@
-/*
+/**
  * @license
  * Copyright 2023 Google LLC
  * SPDX-License-Identifier: Apache-2.0
@@ -21,33 +21,37 @@ const addText = {
     },
   ],
   previousStatement: null,
-  nextStatement: null,
+  nextStatement: null, 
   colour: 160,
   tooltip: '',
   helpUrl: '',
 };
-
-const stringLength = {
-  type: 'string_length',
-  message0: 'length of %1',
+const esp32PinWrite = {
+  type: 'esp32_pin_write',
+  message0: 'set ESP32 pin %1 to %2',
   args0: [
     {
       type: 'input_value',
+      name: 'PIN',
+      check: 'Number',
+    },
+    {
+      type: 'input_value',
       name: 'VALUE',
-      check: 'String',
+      check: 'Boolean',
     },
   ],
-  output: 'Number',
-  colour: 160,
-  tooltip: 'Returns number of letters in the provided text.',
-  helpUrl: 'http://www.w3schools.com/jsref/jsref_length_string.asp',
+  previousStatement: null,
+  nextStatement: null,
+  colour: 230,
+  tooltip: 'Write HIGH or LOW to an ESP32 pin.',
+  helpUrl: '',
 };
-
 
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
 // This file has no side effects!
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   addText,
-  stringLength,
+  esp32PinWrite,
 ]);
